@@ -2,7 +2,11 @@
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(option =>
+{
+    option.ReturnHttpNotAcceptable = true; //error for content-type not acceptable
+}).AddNewtonsoftJson(/*for HHTP-PATCH*/).AddXmlDataContractSerializerFormatters(/*for content-type xml support*/);
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
