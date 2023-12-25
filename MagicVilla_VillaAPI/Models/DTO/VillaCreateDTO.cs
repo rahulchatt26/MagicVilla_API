@@ -3,9 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MagicVilla_VillaAPI.Models.DTO
 {
-	public class VillaDTO
-	{
-        public int Id { get; set; }
+	public class VillaCreateDTO
+    {
         [Required]
         [MaxLength(30)]
         public string Name { get; set; }
@@ -21,10 +20,6 @@ namespace MagicVilla_VillaAPI.Models.DTO
         public string ImageUrl { get; set; }
 
         public string Amenity { get; set; }
-
-        public DateTime CreatedDate { get; set; }
-
-        public DateTime UpdatedDate { get; set; }
     }
 }
 
